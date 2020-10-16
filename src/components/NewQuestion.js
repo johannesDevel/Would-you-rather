@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./App.css";
-import { formatQuestion } from "../utils/api";
 import { handleSaveQuestion } from "../actions/shared";
 
 function NewQuestion(props) {
@@ -14,7 +13,7 @@ function NewQuestion(props) {
     e.preventDefault();
     const { optionOneText } = optionTexts;
     const { optionTwoText } = optionTexts;
-    const { dispatch, authedUser, author } = props;
+    const { dispatch, author } = props;
 
     dispatch(
       handleSaveQuestion({
@@ -23,9 +22,6 @@ function NewQuestion(props) {
         author: author.id,
       })
     );
-
-    // console.log(formatedQuestion);
-
     setOptionTexts({ optionOneText: "", optionTwoText: "" });
   }
 
@@ -66,11 +62,7 @@ function NewQuestion(props) {
 
 function mapStateToProps({ authedUser, users }) {
   const author = users[authedUser];
-
-  return {
-    authedUser,
-    author,
-  };
+  return { author };
 }
 
 export default connect(mapStateToProps)(NewQuestion);

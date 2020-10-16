@@ -5,6 +5,7 @@ import {
   receiveUsers,
   saveQuestionUserAction,
 } from "./users";
+
 import {
   questionSaveQuestionAnswerAction,
   saveQuestionAction,
@@ -39,7 +40,6 @@ export function handleSaveQuestion(info) {
   return (dispatch) => {
     return saveQuestion(info)
       .then((question) => {
-        console.log(question);
         dispatch(saveQuestionAction(question));
         dispatch(saveQuestionUserAction(question));
       })
