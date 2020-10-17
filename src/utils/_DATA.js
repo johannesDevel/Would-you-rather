@@ -134,7 +134,6 @@ export function _getQuestions () {
 function formatQuestion ({ optionOneText, optionTwoText, author }) {
   return {
     id: generateUID(),
-    // id: "NO_ID_YET",
     timestamp: Date.now(),
     author,
     optionOne: {

@@ -7,24 +7,32 @@ import Dashboard from "./Dashboard";
 import Nav from "./Nav";
 import QuestionPage from "./QuestionPage";
 import NewQuestion from "./NewQuestion";
+import Login from "./Login";
 
 function App(props) {
   useEffect(() => {
     props.dispatch(handleInitialData());
   });
 
+  const { loading, authedUser } = props;
+
   return (
     <Router>
       <Fragment>
         <div>
-          <Nav />
-          {props.loading === true ? null : (
+          <Nav authedUser={authedUser} />
+          {/* {loading === true ? null : ( */}
             <div>
+              {authedUser === null ? (
+                <Route path="/" exact component={Login} />
+              ) : (
+                <Route path="/" exact component={Dashboard} />
+              )}
+              {/* <Route path="/" exact component={Login} /> */}
               <Route path="/new" component={NewQuestion} />
-              <Route path="/" exact component={Dashboard} />
               <Route path="/question/:id" component={QuestionPage} />
             </div>
-          )}
+          {/* )} */}
         </div>
       </Fragment>
     </Router>
@@ -34,6 +42,7 @@ function App(props) {
 function mapStateToProps({ authedUser }) {
   return {
     loading: authedUser === null,
+    authedUser,
   };
 }
 

@@ -1,21 +1,45 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { handleSetAuthedUser } from '../actions/authedUser';
 
-export default function Nav () {
+
+function Nav(props) {
+
+  function logout() {
+    props.dispatch(handleSetAuthedUser(null));
+  }
+
   return (
-    <nav className='nav'>
+    <nav className="nav">
       <ul>
         <li>
-          <NavLink to='/' exact activeClassName='active'>
+          <NavLink to="/" exact activeClassName="active">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to='/new' activeClassName='active'>
+          <NavLink to="/new" activeClassName="active">
             New Question
           </NavLink>
         </li>
+        {props.authedUser !== null && (
+          <li>
+            <NavLink to="/" exact activeClassName="active">
+              <button onClick={() => logout()}>Logout</button>
+            </NavLink>
+          </li>
+        )}
       </ul>
     </nav>
-  )
-} 
+  );
+}
+
+function mapStateToProps({ authedUser }) {
+
+  return {
+    authedUser,
+  };
+};
+
+export default connect(mapStateToProps)(Nav);

@@ -12,14 +12,12 @@ import {
   receiveQuestions,
 } from "./questions";
 
-const AUTHED_ID = "johndoe";
-
 export function handleInitialData() {
   return (dispatch) => {
-    return getInitialData().then(({ users, questions }) => {
+    return getInitialData().then(({ users, questions, authedUser }) => {
       dispatch(receiveUsers(users));
       dispatch(receiveQuestions(questions));
-      dispatch(setAuthedUser(AUTHED_ID));
+      // dispatch(setAuthedUser(authedUser));
     });
   };
 }

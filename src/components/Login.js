@@ -1,25 +1,47 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { handleSetAuthedUser } from '../actions/authedUser';
 
-class Login extends Component {
+function Login(props) {
+  const [selectedUser, setSelectedUser] = useState("");
 
-  render() {
-    console.log(this.props);
-    return (
-      <div>
-        <ul>{this.props.userIds.map(id => (
-          <li key={id}>User id: {id}</li>
-        ))}
-        </ul>
-      </div>
-    )
+  const { userNames, dispatch } = props;
+
+  function submit(e) {
+    e.preventDefault();
+    dispatch(handleSetAuthedUser(selectedUser));
   }
+
+  return (
+    <div>
+      <form onSubmit={submit}>
+        <select
+          value={selectedUser}
+          onChange={(event) => setSelectedUser(event.target.value)}
+        >
+          {userNames.map((userName) => (
+            <option key={userName.id} value={userName.id}>
+              {userName.name}
+            </option>
+          ))}
+        </select>
+        <div>
+          <button type="submit">Sign in</button>
+        </div>
+      </form>
+    </div>
+  );
 }
 
 function mapStateToProps({ users }) {
+  const userNames = Object.keys(users).map((userId) => ({
+    id: userId,
+    name: users[userId].name,
+  }));
+
   return {
-    userIds: Object.keys(users)
-  }
+    userNames,
+  };
 }
 
 export default connect(mapStateToProps)(Login);
