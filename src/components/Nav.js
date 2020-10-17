@@ -1,11 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { handleSetAuthedUser } from '../actions/authedUser';
-
+import { handleSetAuthedUser } from "../actions/authedUser";
 
 function Nav(props) {
-
   function logout() {
     props.dispatch(handleSetAuthedUser(null));
   }
@@ -25,8 +23,13 @@ function Nav(props) {
         </li>
         {props.authedUser !== null && (
           <li>
-            <NavLink to="/" exact activeClassName="active">
-              <button onClick={() => logout()}>Logout</button>
+            <NavLink
+              to="/"
+              exact
+              activeClassName="active"
+              onClick={() => logout()}
+            >
+              Logout
             </NavLink>
           </li>
         )}
@@ -36,10 +39,9 @@ function Nav(props) {
 }
 
 function mapStateToProps({ authedUser }) {
-
   return {
     authedUser,
   };
-};
+}
 
 export default connect(mapStateToProps)(Nav);
