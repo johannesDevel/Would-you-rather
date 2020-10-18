@@ -8,6 +8,7 @@ import Nav from "./Nav";
 import QuestionPage from "./QuestionPage";
 import NewQuestion from "./NewQuestion";
 import Login from "./Login";
+import LeaderBoard from './LeaderBoard';
 
 function App(props) {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App(props) {
                 <Route path="/" exact component={Dashboard} />
                 <Route path="/new" component={NewQuestion} />
                 <Route path="/question/:id" component={QuestionPage} />
+                <Route path="/leaderboard" component={LeaderBoard} />
               </div>
             )}
           </div>

@@ -1,4 +1,3 @@
-import { setAuthedUser } from "../actions/authedUser";
 import { saveQuestionAnswer, saveQuestion, getInitialData } from "../utils/api";
 import {
   userSaveQuestAnswerAction,
@@ -17,7 +16,6 @@ export function handleInitialData() {
     return getInitialData().then(({ users, questions, authedUser }) => {
       dispatch(receiveUsers(users));
       dispatch(receiveQuestions(questions));
-      // dispatch(setAuthedUser(authedUser));
     });
   };
 }

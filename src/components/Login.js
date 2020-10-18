@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { handleSetAuthedUser } from "../actions/authedUser";
-import logo from "../logo.jpg";
 import "./App.css";
 
 function Login(props) {
   const [selectedUser, setSelectedUser] = useState({});
 
-  useEffect(() => {
-    if (userNames.length > 0 && !userNamesAvailable()) {
-      setSelectedUser(userNames[0].id);
-    }
-  });
-
   const { userNames, dispatch } = props;
 
-  function userNamesAvailable() {
-    return Object.entries(selectedUser).length > 0;
-  }
+  useEffect(() => {
+    if (userNames.length > 0 && !Object.entries(selectedUser).length > 0) {
+      setSelectedUser(userNames[0].id);
+    }
+  }, [userNames, selectedUser] );
 
   function submit(e) {
     e.preventDefault();
@@ -31,13 +26,11 @@ function Login(props) {
           <div className="login-header">
             <h3>Welcome to the Would You Rather App!</h3>
             <p>Please sign in to continue</p>
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-
           </div>
-          <div id='logo'></div>
+          <div id="logo"></div>
           <div className="login-select-form">
             <form onSubmit={submit}>
-            <h2>Sign in</h2>
+              <h2>Sign in</h2>
               <select
                 placeholder="Select User"
                 value={selectedUser}
