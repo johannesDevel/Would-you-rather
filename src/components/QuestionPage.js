@@ -12,14 +12,18 @@ function checkAnswered(question, authedUser) {
 }
 
 function QuestionPage(props) {
-  const { questionId, answered } = props;
+  const { questionId, question, authedUser, questionFound } = props;
 
   return (
     <div className="question-page">
-      {answered ? (
-        <QuestionAnswered questionId={questionId} />
+      {questionFound ? (
+        checkAnswered(question, authedUser) ? (
+          <QuestionAnswered questionId={questionId} />
+        ) : (
+          <QuestionUnanswered questionId={questionId} />
+        )
       ) : (
-        <QuestionUnanswered questionId={questionId} />
+        <div>Question not found</div>
       )}
     </div>
   );
@@ -27,11 +31,15 @@ function QuestionPage(props) {
 
 function mapStateToProps({ authedUser, questions }, props) {
   const questionId = props.match.params.id;
-  const question = questions[questionId];
+  console.log(questions);
+  const questionFound = questions != null && [questionId] in questions;
+  const question = questionFound ? questions[questionId] : null;
 
   return {
     questionId,
-    answered: checkAnswered(question, authedUser),
+    authedUser,
+    question,
+    questionFound,
   };
 }
 

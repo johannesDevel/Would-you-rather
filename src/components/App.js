@@ -22,16 +22,19 @@ function App(props) {
         <div>
           <Nav />
           {/* {loading === true ? null : ( */}
-            <div>
-              {authedUser === null ? (
-                <Route path="/" exact component={Login} />
-              ) : (
+          <div>
+            {(authedUser === null) ? (
+              <div>
+                <Route path="/" component={Login} />
+              </div>
+            ) : (
+              <div>
                 <Route path="/" exact component={Dashboard} />
-              )}
-              {/* <Route path="/" exact component={Login} /> */}
-              <Route path="/new" component={NewQuestion} />
-              <Route path="/question/:id" component={QuestionPage} />
-            </div>
+                <Route path="/new" component={NewQuestion} />
+                <Route path="/question/:id" component={QuestionPage} />
+              </div>
+            )}
+          </div>
           {/* )} */}
         </div>
       </Fragment>

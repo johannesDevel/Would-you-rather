@@ -10,9 +10,6 @@ function QuestionAnswered(props) {
   const optionTwoVotes = question.optionTwo.votes;
   const allVotesSum = optionOneVotes.length + optionTwoVotes.length;
 
-  console.log("questionanwered");
-  console.log(props);
-
   return (
     <div className="question">
       <div className="question-title">{`Asked by ${author.name}`}</div>
