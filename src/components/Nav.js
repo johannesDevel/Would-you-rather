@@ -4,8 +4,10 @@ import { connect } from "react-redux";
 import { handleSetAuthedUser } from "../actions/authedUser";
 
 function Nav(props) {
+  const { authedUser, dispatch } = props;
+
   function logout() {
-    props.dispatch(handleSetAuthedUser(null));
+    dispatch(handleSetAuthedUser(null));
   }
 
   return (
@@ -21,8 +23,10 @@ function Nav(props) {
             New Question
           </NavLink>
         </li>
-        {props.authedUser !== null && (
+
+        {authedUser !== null && (
           <li>
+            <div>{`Hello ${authedUser}`}</div>
             <NavLink
               to="/"
               exact

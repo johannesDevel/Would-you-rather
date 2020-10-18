@@ -20,7 +20,7 @@ function App(props) {
     <Router>
       <Fragment>
         <div>
-          <Nav authedUser={authedUser} />
+          <Nav />
           {/* {loading === true ? null : ( */}
             <div>
               {authedUser === null ? (
