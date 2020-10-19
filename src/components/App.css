@@ -2,12 +2,12 @@
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
@@ -22,7 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .question-page, .new-question, .dashboard, .login-wrapper, .leader-board {
   width: 500px;
@@ -36,11 +36,11 @@
   align-items: center;
 }
 
-.login-header {
+/* .login-header {
   width: 100%;
   text-align: center;
   background-color: #f0f0f0;
-}
+} */
 
 .login-select-form {
   width: 100%;
@@ -129,6 +129,17 @@ ul {
   font-weight: bold;
   background-color:  #f0f0f0;
   padding: 7px;
+}
+
+.nav {
+  background-color: #f0f0f0;
+  height: 50px;
+}
+
+.nav-list {
+  display: flex;
+  background-color: #f0f0f0;
+
 }
 
 .App-link {

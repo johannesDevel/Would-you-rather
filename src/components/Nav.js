@@ -13,7 +13,7 @@ function Nav(props) {
   return (
     <nav className="nav">
       {authedUser != null ? (
-        <ul>
+        <ul className='nav-list'>
           <li>
             <NavLink to="/" exact activeClassName="active">
               Home
