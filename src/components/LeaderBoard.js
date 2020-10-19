@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import "./App.css";
 
 function LeaderBoard(props) {
   const { questionsSumUser } = props;
-
-  useEffect(() => {
-    console.log(questionsSumUser);
-  });
 
   return (
     <div className="leader-board">
@@ -63,7 +59,7 @@ function mapStateToProps({ users }) {
   });
 
   return {
-    questionsSumUser,
+    questionsSumUser: questionsSumUser.sort((a, b) => b.sum - a.sum),
   };
 }
 
