@@ -23,7 +23,7 @@ function App(props) {
         <div>
           <Nav />
           {/* {loading === true ? null : ( */}
-          <div>
+          <div className="app-content">
             {(authedUser === null) ? (
               <div>
                 <Route path="/" component={Login} />

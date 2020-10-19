@@ -24,6 +24,10 @@
   color: white;
 } */
 
+.app-content {
+  margin: 50px;
+}
+
 .question-page, .new-question, .dashboard, .login-wrapper, .leader-board {
   width: 500px;
   margin: auto;
@@ -112,6 +116,7 @@ img {
 
 ul {
   list-style-type: none;
+  margin: 0;
 }
 
 .question-answered-option {
@@ -134,12 +139,22 @@ ul {
 .nav {
   background-color: #f0f0f0;
   height: 50px;
+  width: 100%;
 }
 
 .nav-list {
   display: flex;
   background-color: #f0f0f0;
+  width: 100%;
+}
 
+.nav-list li {
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+.nav-list-logout {
+  align-self: flex-end;
 }
 
 .App-link {

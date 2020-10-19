@@ -29,10 +29,10 @@ function Nav(props) {
               Leader Board
             </NavLink>
           </li>
-          <li>
+          <li className="nav-list-user">
             <span>{`Hello ${authedUser}`}</span>
           </li>
-          <li>
+          <li className="nav-list-logout">
             <NavLink
               to="/"
               exact
