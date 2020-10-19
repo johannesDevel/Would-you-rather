@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import "./App.css";
 import { handleSaveQuestion } from "../actions/shared";
 
@@ -7,7 +8,12 @@ function NewQuestion(props) {
   const [optionTexts, setOptionTexts] = useState({
     optionOneText: "",
     optionTwoText: "",
+    toHome: false
   });
+
+  if (optionTexts.toHome) {
+    return <Redirect to="/" />
+  }
 
   function submit(e) {
     e.preventDefault();
@@ -22,7 +28,7 @@ function NewQuestion(props) {
         author: author.id,
       })
     );
-    setOptionTexts({ optionOneText: "", optionTwoText: "" });
+    setOptionTexts({ optionOneText: "", optionTwoText: "", toHome: true });
   }
 
   return (

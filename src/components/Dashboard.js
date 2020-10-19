@@ -45,7 +45,7 @@ function mapStateToProps({ questions, authedUser }) {
 
   return {
     authedUser,
-    parsedQuestions,
+    parsedQuestions: parsedQuestions.sort((a, b) => b.timestamp - a.timestamp),
   };
 };
 
