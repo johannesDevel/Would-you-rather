@@ -8,7 +8,7 @@ function checkAnswered(question, authedUser) {
     question.optionOne.votes.includes(authedUser) ||
     question.optionTwo.votes.includes(authedUser)
   );
-};
+}
 
 function Dashboard(props) {
   const [answered, setAnswered] = useState(false);
@@ -34,19 +34,22 @@ function Dashboard(props) {
       </ul>
     </div>
   );
-};
+}
 
-function mapStateToProps({ questions, authedUser }) {
+function mapStateToProps({ questions, authedUser, users }) {
   const parsedQuestions = Object.keys(questions).map((questionId) => {
     const question = questions[questionId];
-    question.answered = checkAnswered(question, authedUser);
-    return question;
+    return {
+      ...question,
+      answered: checkAnswered(question, authedUser),
+      avatar: users[question.author].avatarURL,
+    };
   });
 
   return {
     authedUser,
     parsedQuestions: parsedQuestions.sort((a, b) => b.timestamp - a.timestamp),
   };
-};
+}
 
 export default connect(mapStateToProps)(Dashboard);

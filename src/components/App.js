@@ -8,7 +8,7 @@ import Nav from "./Nav";
 import QuestionPage from "./QuestionPage";
 import NewQuestion from "./NewQuestion";
 import Login from "./Login";
-import LeaderBoard from './LeaderBoard';
+import LeaderBoard from "./LeaderBoard";
 
 function App(props) {
   useEffect(() => {
@@ -21,10 +21,10 @@ function App(props) {
     <Router>
       <Fragment>
         <div>
-          <Nav />
+          {authedUser !== null && <Nav />}
           {/* {loading === true ? null : ( */}
           <div className="app-content">
-            {(authedUser === null) ? (
+            {authedUser === null ? (
               <div>
                 <Route path="/" component={Login} />
               </div>
