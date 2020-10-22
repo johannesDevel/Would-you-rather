@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://konsum.ch/wp-content/uploads/2015/09/Facebook-no-profile-picture-icon-620x389-e1416282314920.jpg',
+    avatarURL: 'woman.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://konsum.ch/wp-content/uploads/2015/09/Facebook-no-profile-picture-icon-620x389-e1416282314920.jpg',
+    avatarURL: 'nerd.png',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'https://konsum.ch/wp-content/uploads/2015/09/Facebook-no-profile-picture-icon-620x389-e1416282314920.jpg',
+    avatarURL: 'bussiness-man.png',
         answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
