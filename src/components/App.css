@@ -1,14 +1,9 @@
-.App {
-  text-align: center;
-}
-
-.app-content {
-  margin: 50px;
-}
 
 .question-page, .new-question, .dashboard, .login-wrapper, .leader-board {
   width: 500px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .login-wrapper {
@@ -55,12 +50,6 @@
   font-weight: bold;
   text-align: center;
 }
-.question {
-  border: 3px solid  #f0f0f0;
-  margin: 15px;
-  padding: 10px;
-
-}
 
 #logo {
   background-image: url(../pics/logo.jpg);
@@ -74,6 +63,7 @@ img {
 
 .question-content {
   display: flex;
+  
 }
 
 .question-content > div {
@@ -81,14 +71,8 @@ img {
   margin-left: 15px;
 }
 
-.question p {
-  font-weight: bold;
-  font-size: 1.05em;
-}
-
 ul {
   list-style-type: none;
-  margin: 0;
 }
 
 .question-answered-option {
@@ -101,23 +85,70 @@ ul {
   font-weight: bold;
 }
 
+.question {
+  border: 2px solid  #f0f0f0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 7px;
+}
+
+/* .question > div {
+  display: flex;
+} */
+
+.question p {
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
 .question-title {
   font-size: 1.1em;
   font-weight: bold;
   background-color:  #f0f0f0;
-  padding: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+.question button {
+  height: 25px;
+  font-weight: bold;
+  background-color:  #f0f0f0;
+}
+
+.question-overview-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 5px;
+  width: 100%;
+}
+
+.dashboard > div {
+  margin-top: 30px;
+  margin-left: 38px;
+}
+
+#answeredButton {
+  width: 50%;
+  height: 25px;
+  background-color:  #f0f0f0;
+}
+
+#unansweredButton {
+  width: 50%;
+  height: 25px;
+  background-color:  #f0f0f0;
 }
 
 .nav {
   background-color: #f0f0f0;
   height: 50px;
-  width: 100%;
 }
 
 .nav-list {
   display: flex;
   background-color: #f0f0f0;
-  width: 100%;
 }
 
 .nav-list li {

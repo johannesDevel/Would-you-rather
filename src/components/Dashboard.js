@@ -15,13 +15,15 @@ function Dashboard(props) {
 
   return (
     <div className="dashboard">
-      <button disabled={answered} onClick={() => setAnswered(true)}>
-        Answered
-      </button>
+      <div>
+        <button id="answeredButton" disabled={answered} onClick={() => setAnswered(true)}>
+          Answered
+        </button>
 
-      <button disabled={!answered} onClick={() => setAnswered(false)}>
-        Unanswered
-      </button>
+        <button id="unansweredButton" disabled={!answered} onClick={() => setAnswered(false)}>
+          Unanswered
+        </button>
+      </div>
 
       <ul>
         {props.parsedQuestions
