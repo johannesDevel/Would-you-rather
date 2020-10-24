@@ -195,6 +195,8 @@ ul {
     margin-right: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.question-not-found {
+  margin-top: 10%;
+  font-size: 1.2em;
+  text-align: center;
 }

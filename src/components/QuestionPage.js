@@ -23,7 +23,7 @@ function QuestionPage(props) {
           <QuestionUnanswered questionId={questionId} />
         )
       ) : (
-        <div>Question not found</div>
+        <div className="question-not-found">ERROR 404: Question not found</div>
       )}
     </div>
   );
