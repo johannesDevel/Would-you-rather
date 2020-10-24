@@ -13,6 +13,10 @@ function QuestionAnswered(props) {
   const optionTwoVotes = question.optionTwo.votes;
   const allVotesSum = optionOneVotes.length + optionTwoVotes.length;
 
+  function formatNumber(number) {
+    return new Intl.NumberFormat("en-US", { style: "percent" }).format(number);
+  }
+
   return (
     <div className="question">
       <div className="question-title">{`Asked by ${author.name}`}</div>
@@ -30,18 +34,34 @@ function QuestionAnswered(props) {
             alt="Avatar"
           />
         </div>
-        <div>
+        <div className="question-overview-content">
           <p>Results:</p>
-          <div className="question-answered-option">
+          <div
+            className={
+              optionOneVotes.includes(authedUser)
+                ? "question-answered-option selected-option"
+                : "question-answered-option"
+            }
+          >
             <p>{`Would you rather ${question.optionOne.text}`}</p>
-            {optionOneVotes.includes(authedUser) && <div>Your Choice</div>}
-            <div>{(optionOneVotes.length / allVotesSum) * 100}</div>
+            <div>{`${formatNumber(
+              optionOneVotes.length / allVotesSum
+            )} voted for that option`}</div>
+            <br />
             <div>{`${optionOneVotes.length} out of ${allVotesSum} votes`}</div>
           </div>
-          <div className="question-answered-option">
+          <div
+            className={
+              optionTwoVotes.includes(authedUser)
+                ? "question-answered-option selected-option"
+                : "question-answered-option"
+            }
+          >
             <p>{`Would you rather ${question.optionTwo.text}`}</p>
-            {optionTwoVotes.includes(authedUser) && <div>Your Choice</div>}
-            <div>{(optionTwoVotes.length / allVotesSum) * 100}</div>
+            <div>{`${formatNumber(
+              optionTwoVotes.length / allVotesSum
+            )} voted for that option`}</div>
+            <br />
             <div>{`${optionTwoVotes.length} out of ${allVotesSum} votes`}</div>
           </div>
         </div>

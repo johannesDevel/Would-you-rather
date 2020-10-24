@@ -39,7 +39,7 @@ function QuestionUnanswered(props) {
             alt="Avatar"
           />
         </div>
-        <div class="question-overview-content">
+        <div className="question-overview-content">
           <p>Would you rather ...</p>
           <div>
             <label>

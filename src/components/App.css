@@ -2,7 +2,11 @@
   margin-top: -18px;
 }
 
-.question-page, .new-question, .dashboard, .login-wrapper, .leader-board {
+.question-page,
+.new-question,
+.dashboard,
+.login-wrapper,
+.leader-board {
   width: 500px;
   margin: auto;
   display: flex;
@@ -10,7 +14,7 @@
 }
 
 .login-wrapper {
-  border: 2px solid  #f0f0f0;
+  border: 2px solid #f0f0f0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +28,7 @@
 }
 
 .leader-board-user {
-  border: 2px solid  #f0f0f0;
+  border: 2px solid #f0f0f0;
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 5px;
@@ -46,7 +50,8 @@
   flex-direction: column;
 }
 
-.login-select-form select, .login-select-form button {
+.login-select-form select,
+.login-select-form button {
   width: 95%;
   height: 35px;
   margin-bottom: 30px;
@@ -67,7 +72,6 @@ img {
 
 .question-content {
   display: flex;
-  
 }
 
 .question-content > div {
@@ -80,17 +84,18 @@ ul {
 }
 
 .question-answered-option {
-  border: 2px solid  #f0f0f0;
+  border: 2px solid #f0f0f0;
   padding: 5px;
   margin-bottom: 5px;
 }
 
-.question-answered-option > p {
-  font-weight: bold;
+.selected-option {
+  border-color: rgb(135, 206, 250);
+  background-color: rgb(205, 235, 253);
 }
 
 .question {
-  border: 2px solid  #f0f0f0;
+  border: 2px solid #f0f0f0;
   margin-top: 15px;
   margin-bottom: 15px;
   padding-bottom: 7px;
@@ -104,7 +109,7 @@ ul {
 .question-title {
   font-size: 1.1em;
   font-weight: bold;
-  background-color:  #f0f0f0;
+  background-color: #f0f0f0;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
@@ -113,7 +118,7 @@ ul {
 .question button {
   height: 25px;
   font-weight: bold;
-  background-color:  #f0f0f0;
+  background-color: #f0f0f0;
   width: 100%;
 }
 
@@ -134,13 +139,13 @@ ul {
 #answeredButton {
   width: 50%;
   height: 25px;
-  background-color:  #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 #unansweredButton {
   width: 50%;
   height: 25px;
-  background-color:  #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .nav {
