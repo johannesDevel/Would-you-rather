@@ -17,7 +17,7 @@ function QuestionOverview(props) {
     <div className="question">
       <div className="question-title">{question.author} asks:</div>
       <div className="question-content">
-        <div>
+        <div className="avatar">
           <img
             src={
               question.avatar === "woman"
