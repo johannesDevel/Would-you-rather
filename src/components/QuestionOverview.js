@@ -1,13 +1,17 @@
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import woman from "../pics/woman.png";
 import nerd from "../pics/nerd.png";
 import businessMan from "../pics/business-man.png";
 
 function QuestionOverview(props) {
+  const [toQuestion, setToQuestion] = useState("");
+
   const { question } = props;
 
-  console.log(question);
+  if (toQuestion !== "") {
+    return <Redirect to={toQuestion} />;
+  }
 
   return (
     <div className="question">
@@ -28,8 +32,8 @@ function QuestionOverview(props) {
         <div className="question-overview-content">
           <p>Would you rather ...</p>
           <div>...{question.optionOne.text}...</div>
-          <button>
-            <Link to={`/question/${question.id}`}>View Poll</Link>
+          <button onClick={() => setToQuestion(`/question/${question.id}`)}>
+            Submit
           </button>
         </div>
       </div>
@@ -37,4 +41,4 @@ function QuestionOverview(props) {
   );
 }
 
-export default withRouter(QuestionOverview);
+export default QuestionOverview;
