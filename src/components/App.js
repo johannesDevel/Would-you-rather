@@ -31,7 +31,7 @@ function App(props) {
             ) : (
               <div>
                 <Route path="/" exact component={Dashboard} />
-                <Route path="/new" component={NewQuestion} />
+                <Route path="/add" component={NewQuestion} />
                 <Route path="/question/:id" component={QuestionPage} />
                 <Route path="/leaderboard" component={LeaderBoard} />
               </div>
