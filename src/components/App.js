@@ -9,20 +9,21 @@ import QuestionPage from "./QuestionPage";
 import NewQuestion from "./NewQuestion";
 import Login from "./Login";
 import LeaderBoard from "./LeaderBoard";
+import LoadingBar from "react-redux-loading";
 
 function App(props) {
   useEffect(() => {
     props.dispatch(handleInitialData());
   });
 
-  const { loading, authedUser } = props;
+  const { authedUser } = props;
 
   return (
     <Router>
       <Fragment>
         <div>
           <Nav />
-          {/* {loading === true ? null : ( */}
+          <LoadingBar />
           <div className="app-content">
             {authedUser === null ? (
               <div>
@@ -37,7 +38,6 @@ function App(props) {
               </div>
             )}
           </div>
-          {/* )} */}
         </div>
       </Fragment>
     </Router>
@@ -46,7 +46,6 @@ function App(props) {
 
 function mapStateToProps({ authedUser }) {
   return {
-    loading: authedUser === null,
     authedUser,
   };
 }
