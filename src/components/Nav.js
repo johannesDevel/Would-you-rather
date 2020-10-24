@@ -12,26 +12,28 @@ function Nav(props) {
 
   return (
     <nav className="nav">
-      {authedUser != null ? (
-        <ul className='nav-list'>
-          <li>
-            <NavLink to="/" exact activeClassName="active">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/add" activeClassName="active">
-              New Question
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/leaderboard" activeClassName="active">
-              Leader Board
-            </NavLink>
-          </li>
+      <ul className="nav-list">
+        <li>
+          <NavLink to="/" exact activeClassName="active">
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/add" activeClassName="active">
+            New Question
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/leaderboard" activeClassName="active">
+            Leader Board
+          </NavLink>
+        </li>
+        {authedUser !== null && (
           <li className="nav-list-user">
             <span>{`Hello ${authedUser}`}</span>
           </li>
+        )}
+        {authedUser !== null && (
           <li className="nav-list-logout">
             <NavLink
               to="/"
@@ -42,10 +44,8 @@ function Nav(props) {
               Logout
             </NavLink>
           </li>
-        </ul>
-      ) : (
-        <div>login</div>
-      )}
+        )}
+      </ul>
     </nav>
   );
 }

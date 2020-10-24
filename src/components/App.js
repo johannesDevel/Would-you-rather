@@ -21,7 +21,7 @@ function App(props) {
     <Router>
       <Fragment>
         <div>
-          {authedUser !== null && <Nav />}
+          <Nav />
           {/* {loading === true ? null : ( */}
           <div className="app-content">
             {authedUser === null ? (
