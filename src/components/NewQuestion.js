@@ -8,11 +8,11 @@ function NewQuestion(props) {
   const [optionTexts, setOptionTexts] = useState({
     optionOneText: "",
     optionTwoText: "",
-    toHome: false
   });
+  const [toHome, setToHome] = useState(false);
 
-  if (optionTexts.toHome) {
-    return <Redirect to="/" />
+  if (toHome) {
+    return <Redirect to="/" />;
   }
 
   function submit(e) {
@@ -28,7 +28,8 @@ function NewQuestion(props) {
         author: author.id,
       })
     );
-    setOptionTexts({ optionOneText: "", optionTwoText: "", toHome: true });
+    setOptionTexts({ optionOneText: "", optionTwoText: "" });
+    setToHome(true);
   }
 
   return (
@@ -38,6 +39,7 @@ function NewQuestion(props) {
         <p>Complete the question</p>
         <p>Would you rather...</p>
         <textarea
+          placeholder="Enter Option One Text here"
           value={optionTexts.optionOneText}
           onChange={(e) =>
             setOptionTexts({ ...optionTexts, optionOneText: e.target.value })
@@ -45,22 +47,20 @@ function NewQuestion(props) {
         ></textarea>
         <p>OR</p>
         <textarea
+          placeholder="Enter Option Two Text here"
           value={optionTexts.optionTwoText}
           onChange={(e) =>
             setOptionTexts({ ...optionTexts, optionTwoText: e.target.value })
           }
         ></textarea>
-        <div>
-          <button
-            type="submit"
-            disabled={
-              optionTexts.optionOneText === "" ||
-              optionTexts.optionTwoText === ""
-            }
-          >
-            Submit
-          </button>
-        </div>
+        <button
+          type="submit"
+          disabled={
+            optionTexts.optionOneText === "" || optionTexts.optionTwoText === ""
+          }
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
