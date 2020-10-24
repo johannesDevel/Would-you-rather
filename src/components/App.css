@@ -179,6 +179,7 @@ ul {
 .nav-list {
   display: flex;
   background-color: #f0f0f0;
+  text-align: end;
 }
 
 .nav-list li {
@@ -187,11 +188,11 @@ ul {
 }
 
 .nav-list-user {
-  justify-self: flex-end;
+  flex-grow: 2;
 }
 
 .nav-list-logout {
-  align-self: flex-end;
+    margin-right: 30px;
 }
 
 .App-link {
