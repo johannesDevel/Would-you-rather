@@ -10,7 +10,6 @@ function QuestionUnanswered(props) {
   const [selectedOption, setSelectedOption] = useState("optionOne");
 
   const { question, author, dispatch, authedUser } = props;
-  console.log(author);
 
   function submit() {
     dispatch(

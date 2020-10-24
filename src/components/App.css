@@ -186,6 +186,10 @@ ul {
   padding-top: 15px;
 }
 
+.nav-list-user {
+  justify-self: flex-end;
+}
+
 .nav-list-logout {
   align-self: flex-end;
 }

@@ -31,7 +31,6 @@ function QuestionPage(props) {
 
 function mapStateToProps({ authedUser, questions }, props) {
   const questionId = props.match.params.id;
-  console.log(questions);
   const questionFound = questions != null && [questionId] in questions;
   const question = questionFound ? questions[questionId] : null;
 
