@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import QuestionOverview from "./QuestionOverview";
 import "./App.css";
+import LoadingBar from "react-redux-loading";
 
 function checkAnswered(question, authedUser) {
   return (
@@ -15,6 +16,7 @@ function Dashboard(props) {
 
   return (
     <div className="dashboard">
+      <LoadingBar />
       <div>
         <button id="answeredButton" disabled={answered} onClick={() => setAnswered(true)}>
           Answered

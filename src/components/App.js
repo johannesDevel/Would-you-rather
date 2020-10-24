@@ -9,7 +9,6 @@ import QuestionPage from "./QuestionPage";
 import NewQuestion from "./NewQuestion";
 import Login from "./Login";
 import LeaderBoard from "./LeaderBoard";
-import LoadingBar from "react-redux-loading";
 
 function App(props) {
   useEffect(() => {
@@ -23,7 +22,6 @@ function App(props) {
       <Fragment>
         <div>
           <Nav />
-          <LoadingBar />
           <div className="app-content">
             {authedUser === null ? (
               <div>
