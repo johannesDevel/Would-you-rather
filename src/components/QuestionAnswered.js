@@ -2,6 +2,9 @@ import React from "react";
 import "./App.css";
 import { connect } from "react-redux";
 import { formatQuestion } from "../utils/api";
+import woman from "../pics/woman.png";
+import nerd from "../pics/nerd.png";
+import businessMan from "../pics/business-man.png";
 
 function QuestionAnswered(props) {
   const { author, question, authedUser } = props;
@@ -16,7 +19,16 @@ function QuestionAnswered(props) {
 
       <div className="question-content">
         <div className="avatar">
-          <img src={author.avatarURL} alt="Avatar" />
+          <img
+            src={
+              author.avatarURL === "woman"
+                ? woman
+                : author.avatarURL === "business-man"
+                ? businessMan
+                : nerd
+            }
+            alt="Avatar"
+          />
         </div>
         <div>
           <p>Results:</p>

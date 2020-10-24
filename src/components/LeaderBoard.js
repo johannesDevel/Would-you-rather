@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./App.css";
+import woman from "../pics/woman.png";
+import nerd from "../pics/nerd.png";
+import businessMan from "../pics/business-man.png";
 
 function LeaderBoard(props) {
   const { questionsSumUser } = props;
@@ -14,7 +17,16 @@ function LeaderBoard(props) {
               <div className="leader-board-user">
                 <div>
                   <div>
-                    <img src={questionSum.avatar} alt="Avatar" />
+                    <img
+                      src={
+                        questionSum.avatar === "woman"
+                          ? woman
+                          : questionSum.avatar === "business-man"
+                          ? businessMan
+                          : nerd
+                      }
+                      alt="Avatar"
+                    />
                   </div>
                   <div className="leader-board-user-info">
                     <h3>{questionSum.name}</h3>

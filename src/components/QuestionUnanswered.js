@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import "./App.css";
 import { handleSaveQuestionAnswer } from "../actions/shared";
 import { formatQuestion } from "../utils/api";
+import woman from "../pics/woman.png";
+import nerd from "../pics/nerd.png";
+import businessMan from "../pics/business-man.png";
 
 function QuestionUnanswered(props) {
   const [selectedOption, setSelectedOption] = useState("optionOne");
 
   const { question, author, dispatch, authedUser } = props;
+  console.log(author);
 
   function submit() {
     dispatch(
@@ -25,7 +28,16 @@ function QuestionUnanswered(props) {
 
       <div className="question-content">
         <div className="avatar">
-          <img src={author.avatarURL} alt="Avatar" />
+          <img
+            src={
+              author.avatarURL === "woman"
+                ? woman
+                : author.avatarURL === "business-man"
+                ? businessMan
+                : nerd
+            }
+            alt="Avatar"
+          />
         </div>
         <div>
           <p>Would you rather ...</p>

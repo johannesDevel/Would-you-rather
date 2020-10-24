@@ -1,3 +1,6 @@
+#root {
+  margin-top: -18px;
+}
 
 .question-page, .new-question, .dashboard, .login-wrapper, .leader-board {
   width: 500px;
@@ -69,6 +72,11 @@ img {
 .question-content > div {
   margin-top: 15px;
   margin-left: 15px;
+}
+
+.question-content > .avatar {
+  width: 120px;
+  height: 200px;
 }
 
 ul {
