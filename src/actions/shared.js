@@ -30,7 +30,6 @@ export function handleSaveQuestionAnswer(info) {
 
     return saveQuestionAnswer(info).catch((e) => {
       console.warn("Error in handleSaveQuestionAnswer", e);
-      alert("There was an error saving the answer.");
     });
   };
 }
@@ -44,7 +43,6 @@ export function handleSaveQuestion(info) {
       })
       .catch((e) => {
         console.warn("Error in handleSaveQuestion", e);
-        alert("There was an error in saving the question");
       });
   };
 }
