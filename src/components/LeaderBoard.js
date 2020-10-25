@@ -56,9 +56,7 @@ function mapStateToProps({ users }) {
     const user = users[userId];
     const createdQuestions = user.questions;
     const answeredQuestions = Object.keys(user.answers);
-    const questionsSum = [
-      ...new Set([...createdQuestions, ...answeredQuestions]),
-    ];
+    const questionsSum = [...createdQuestions, ...answeredQuestions];
 
     return {
       id: user.id,
